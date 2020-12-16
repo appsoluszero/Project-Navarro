@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf2edee5c58d82540a51f03df9d42094, type: 3}
-  m_Name: MainRenderPipeline
+  m_Name: RenderPipelineAsset
   m_EditorClassIdentifier: 
   k_AssetVersion: 5
   k_AssetPreviousVersion: 5
@@ -19,7 +19,7 @@ MonoBehaviour:
   m_RendererDataList:
   - {fileID: 11400000, guid: 64fd52cc25e5d464db579618bee1aab2, type: 2}
   - {fileID: 11400000, guid: 466cb1e7b073f324eaca419c295b94e9, type: 2}
-  m_DefaultRendererIndex: 1
+  m_DefaultRendererIndex: 0
   m_RequireDepthTexture: 0
   m_RequireOpaqueTexture: 0
   m_OpaqueDownsampling: 1
