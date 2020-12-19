@@ -10,7 +10,6 @@ public class PlayerView : MonoBehaviour
         Vector3 LookDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
         LookDirection.z = 0f;
         float angle = -CalculateAngle(LookDirection);
-        Debug.Log(angle);
         Vector3 rot = new Vector3(0f, 0f, angle);
         flashLight.rotation = Quaternion.Euler(rot); 
     }
