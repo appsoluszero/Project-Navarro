@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
-public class InputManager : MonoBehaviour
+public class InputManagerMovement : MonoBehaviour
 {
+    [SerializeField] private Transform PlayerReference;
     [SerializeField] private bool rawInput;
-    [Header("Movement")]
     [SerializeField] private float speed;
     [SerializeField] private float gravity;
     [SerializeField] private KeyCode walkUp;
@@ -30,7 +29,7 @@ public class InputManager : MonoBehaviour
             timeCounterY = 0f;
             CalculateRawAxis();
         }
-        GetComponent<IMovementMethod>().SetMovement(new Vector2(axisX, axisY).normalized);
+        PlayerReference.GetComponent<IMovementMethod>().SetMovement(new Vector2(axisX, axisY).normalized);
     }
     void CalculateRawAxis()
     {
