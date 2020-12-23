@@ -700,6 +700,7 @@ GameObject:
   - component: {fileID: 1317346792}
   - component: {fileID: 1317346791}
   - component: {fileID: 1317346787}
+  - component: {fileID: 1317346793}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -719,6 +720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c48b78ec97cabc4392bfe464d7c3e33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootingInput: {fileID: 2013965204}
 --- !u!4 &1317346788
 Transform:
   m_ObjectHideFlags: 0
@@ -809,6 +811,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56213b7154197464980885314189f12c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1317346793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317346786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19f4bc915eccb147a880a83636c49fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerWeapon: {fileID: 11400000, guid: dfc004599f85a2d4388e33fb03771340, type: 2}
+  leftinmagazine: 0
 --- !u!1 &1874975051
 GameObject:
   m_ObjectHideFlags: 3
@@ -916,21 +932,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5c866759e22dbc4d96c27e9be8b3e48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryData: {fileID: 1317346793}
   shootWeapon: 323
-  OnShoot:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1317346787}
-        m_MethodName: shootWeapon
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  reloadWeapon: 114
 --- !u!1 &2085214611
 GameObject:
   m_ObjectHideFlags: 0
