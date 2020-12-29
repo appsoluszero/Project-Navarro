@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
+    public int playerHealth = 100;
     public Weapon playerWeapon;
     public int leftinmagazine;
     public int totalammo;
