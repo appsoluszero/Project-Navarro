@@ -9,14 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 914ef4d33e5d9e3489311b9352255c85, type: 3}
-  m_Name: StandardAutomaticRifle
-  m_EditorClassIdentifier: 
-  officialname: MAR-45
+  m_Script: {fileID: 11500000, guid: aca38085a4dab6748b3a45d3b2105436, type: 3}
+  m_Name: FAK
+  m_EditorClassIdentifier: Assembly-CSharp::Replenish
+  officialname: 
   type: 0
-  damage: 15
-  effectiverange: 7
-  accuracy: 32
-  magazinesize: 30
-  totalammo: 120
-  firerate: 600
+  amount: 0
+  charge: 0

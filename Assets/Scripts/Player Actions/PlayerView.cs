@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class PlayerView : MonoBehaviour
 {
+    public float angle;
     //[SerializeField] private Transform flashLight;
     void Update()
     {
         Vector3 LookDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
         LookDirection.z = 0f;
-        float angle = -CalculateAngle(LookDirection);
+        angle = -CalculateAngle(LookDirection);
         //flashLight.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle)); 
     }
 
