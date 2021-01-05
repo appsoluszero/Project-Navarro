@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class ReturnPosition : MonoBehaviour
 {
+    [SerializeField] private Transform actualPosition;
     [SerializeField] private GridLayout grid;
     [SerializeField] private Tilemap tilemap;
     [SerializeField] private Tile changeToTile;
@@ -25,9 +26,9 @@ public class ReturnPosition : MonoBehaviour
                 Debug.Log("TRUE");
             }
         }
-        /*Vector3 currentPos = grid.CellToWorld(grid.WorldToCell(LookDirection));
+        Vector3 currentPos = grid.CellToWorld(grid.WorldToCell(actualPosition.position));
         currentPos.x += grid.cellSize.x/2f;
         currentPos.y += grid.cellSize.y/2f;
-        Debug.Log(currentPos);*/
+        //Debug.Log(grid.WorldToCell(actualPosition.position));
     }
 }
