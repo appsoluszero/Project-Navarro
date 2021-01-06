@@ -5,13 +5,19 @@ using UnityEngine.Tilemaps;
 
 public class EnemyPathfinding : MonoBehaviour
 {
+    private Rigidbody2D rb;
     [SerializeField] private GridInitialize gridData;
     [SerializeField] private Transform playerPos;
     [SerializeField] private Grid grid;
     [Header("Walkable")]
     [SerializeField] private Tilemap walkableIndicator;
 
-    void Update()
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    void FixedUpdate()
     {
         List<Node> path = FindPath(transform.position, playerPos.position);
         if(path != null)
@@ -24,8 +30,6 @@ public class EnemyPathfinding : MonoBehaviour
                 Vector3 n2 = grid.CellToWorld(path[i+1].NodeIndex);
                 n2.x += grid.cellSize.x/2f;
                 n2.y += grid.cellSize.y/2f;
-                Debug.Log(n1);
-                Debug.Log(n2);
                 Debug.DrawLine(n1, n2, Color.green,1f);
             }
         }
