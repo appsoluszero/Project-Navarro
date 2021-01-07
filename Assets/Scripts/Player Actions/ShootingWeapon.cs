@@ -35,7 +35,7 @@ public class ShootingWeapon : MonoBehaviour
             RaycastHit2D physicObjectHit = Physics2D.Raycast(transform.position, pelletVector, e.actualrange, physicObjectLayer);
             if(enemyHit)
             {
-                enemyHit.transform.GetComponent<IDamagable>().DamageEvent((enemyHit.point - (Vector2)transform.position).magnitude, e.actualrange, e.effectiverange, e.damage);
+                enemyHit.transform.GetComponent<IDamagable>().recieveDamage((enemyHit.point - (Vector2)transform.position).magnitude, e.actualrange, e.effectiverange, e.damage);
             }
             if(physicObjectHit)
             {
@@ -47,6 +47,7 @@ public class ShootingWeapon : MonoBehaviour
         inventory.leftinmagazine -= 1;
         inventory.totalammo -= 1;
         //Debug.Log(inventory.leftinmagazine.ToString() + "/" + inventory.playerWeapon.magazinesize.ToString() + " Total left = " + inventory.totalammo.ToString());
+        shootingInput.OnReloading -= reloadWeapon;
         shootingInput.OnShoot -= handleShooting;
         shootingInput.OnShoot -= MuzzleLightHandle;
         StartCoroutine(countDownDelay());
@@ -54,6 +55,7 @@ public class ShootingWeapon : MonoBehaviour
     IEnumerator countDownDelay()
     {
         yield return new WaitForSeconds(delayBetweenShot);
+        shootingInput.OnReloading += reloadWeapon;
         shootingInput.OnShoot += handleShooting;
         shootingInput.OnShoot += MuzzleLightHandle;
     }

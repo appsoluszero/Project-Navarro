@@ -5,10 +5,6 @@ using UnityEngine.Events;
 
 public class EnemyDamage : MonoBehaviour, IDamagable
 {
-    public void DamageEvent(float dis, float maxdis, float effdis, float damage)
-    {
-        recieveDamage(dis, maxdis, effdis, damage);
-    }
     public void recieveDamage(float dis, float maxdis, float effdis, float damage)
     {
         float percent;
