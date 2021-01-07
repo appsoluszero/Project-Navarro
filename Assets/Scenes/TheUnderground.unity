@@ -1220,7 +1220,6 @@ GameObject:
   - component: {fileID: 1317346791}
   - component: {fileID: 1317346787}
   - component: {fileID: 1317346793}
-  - component: {fileID: 1317346794}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -1359,23 +1358,6 @@ MonoBehaviour:
   playerWeapon: {fileID: 11400000, guid: dfc004599f85a2d4388e33fb03771340, type: 2}
   leftinmagazine: 0
   totalammo: 0
---- !u!114 &1317346794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317346786}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee88caf25b6debd4981ff05cc2417537, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actualPosition: {fileID: 1763613934}
-  grid: {fileID: 1740174237}
-  tilemap: {fileID: 1648240700}
-  changeToTile: {fileID: 11400000, guid: f0aca4afc82d8ea449f9d83072223438, type: 2}
-  unwalkableTile: {fileID: 11400000, guid: b705767c6561ae148a4f3cca62e33f7c, type: 2}
 --- !u!1 &1584792673
 GameObject:
   m_ObjectHideFlags: 0
