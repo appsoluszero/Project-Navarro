@@ -6,7 +6,7 @@ public class Replenishment : ScriptableObject
     public string officialname;
     public replenishType type;
     //the amount of replenishment per use in percent of the maximum capacity
-    public float amount;
+    public float replenishamount;
     //the amount of charge available
     public int charge;
 }

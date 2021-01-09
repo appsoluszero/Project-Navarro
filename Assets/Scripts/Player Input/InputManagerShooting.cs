@@ -9,6 +9,7 @@ public class InputManagerShooting : MonoBehaviour
     [SerializeField] private KeyCode reloadWeapon;
     public event EventHandler<OnShootArgs> OnShoot;
     public class OnShootArgs : EventArgs {
+        public weaponType type;
         public float damage;
         public float effectiverange;
         public float actualrange;
@@ -28,47 +29,42 @@ public class InputManagerShooting : MonoBehaviour
 
     void ShootingEvent()
     {
-        if(inventoryData.leftinmagazine > 0)
+        if(inventoryData.playerWeapon.type == weaponType.Automatic || inventoryData.playerWeapon.type == weaponType.Burst)
         {
-            if(inventoryData.playerWeapon.type == weaponType.Automatic)
+            if(Input.GetKey(shootWeapon))
             {
-                if(Input.GetKey(shootWeapon))
-                {
-                    OnShoot?.Invoke(this, new OnShootArgs {
-                        damage = inventoryData.playerWeapon.damage,
-                        effectiverange = inventoryData.playerWeapon.effectiverange,
-                        actualrange = inventoryData.playerWeapon.actualrange,
-                        accuracy = inventoryData.playerWeapon.accuracy,
-                        pellet = inventoryData.playerWeapon.pelletnumber
-                    });
-                }
+                OnShoot?.Invoke(this, new OnShootArgs {
+                    type = inventoryData.playerWeapon.type,
+                    damage = inventoryData.playerWeapon.damage,
+                    effectiverange = inventoryData.playerWeapon.effectiverange,
+                    actualrange = inventoryData.playerWeapon.actualrange,
+                    accuracy = inventoryData.playerWeapon.accuracy,
+                    pellet = inventoryData.playerWeapon.pelletnumber
+                });
             }
-            else if(inventoryData.playerWeapon.type == weaponType.nonAutomatic)
+        }
+        else if(inventoryData.playerWeapon.type == weaponType.NonAutomatic)
+        {
+            if(Input.GetKeyDown(shootWeapon))
             {
-                if(Input.GetKeyDown(shootWeapon))
-                {
-                    OnShoot?.Invoke(this, new OnShootArgs {
-                        damage = inventoryData.playerWeapon.damage,
-                        effectiverange = inventoryData.playerWeapon.effectiverange,
-                        actualrange = inventoryData.playerWeapon.actualrange,
-                        accuracy = inventoryData.playerWeapon.accuracy,
-                        pellet = inventoryData.playerWeapon.pelletnumber
-                    });
-                }
+                OnShoot?.Invoke(this, new OnShootArgs {
+                    damage = inventoryData.playerWeapon.damage,
+                    effectiverange = inventoryData.playerWeapon.effectiverange,
+                    actualrange = inventoryData.playerWeapon.actualrange,
+                    accuracy = inventoryData.playerWeapon.accuracy,
+                    pellet = inventoryData.playerWeapon.pelletnumber
+                });
             }
         }
     }
 
     void ReloadingEvent()
     {
-        if(inventoryData.leftinmagazine < inventoryData.playerWeapon.magazinesize && inventoryData.totalammo > 0)
+        if(Input.GetKeyDown(reloadWeapon))
         {
-            if(Input.GetKeyDown(reloadWeapon))
-            {
-                OnReloading?.Invoke(this, new OnReloadingArgs {
-                    magsize = inventoryData.playerWeapon.magazinesize
-                });
-            }
+            OnReloading?.Invoke(this, new OnReloadingArgs {
+                magsize = inventoryData.playerWeapon.magazinesize
+            });
         }
     }
 }

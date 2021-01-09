@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 914ef4d33e5d9e3489311b9352255c85, type: 3}
-  m_Name: AutomaticRifle
+  m_Name: BurstSMG
   m_EditorClassIdentifier: 
-  officialname: MAR-45
-  type: 0
+  officialname: Nice Burst SMG
+  type: 2
   damage: 15
   pelletnumber: 1
   effectiverange: 8
@@ -21,6 +21,7 @@ MonoBehaviour:
   accuracy: 85
   magazinesize: 30
   totalammo: 120
-  firerate: 600
-  timeBetweenShot: 0
-  timeBeforeNextBurst: 0
+  firerate: 0
+  timeBetweenShot: 0.05
+  timeBeforeNextBurst: 0.15
+  numShotPerBurst: 3

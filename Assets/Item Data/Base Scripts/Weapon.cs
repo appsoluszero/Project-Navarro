@@ -20,12 +20,19 @@ public class Weapon : ScriptableObject
     public int magazinesize;
     //in both the gun and the reserve
     public int totalammo;
+    [Header("For automatic/non-automatic")]
     //shot per minute
     public float firerate;
+    [Header("For burst")]
+    public float timeBetweenShot;
+    public float timeBeforeNextBurst;
+    public int numShotPerBurst;
+
 }
 
 public enum weaponType 
 {
     Automatic,
-    nonAutomatic
+    NonAutomatic,
+    Burst
 }

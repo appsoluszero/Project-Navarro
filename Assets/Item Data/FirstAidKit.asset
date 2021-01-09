@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aca38085a4dab6748b3a45d3b2105436, type: 3}
-  m_Name: FAK
+  m_Name: FirstAidKit
   m_EditorClassIdentifier: Assembly-CSharp::Replenish
-  officialname: 
+  officialname: First Aid Kit
   type: 0
-  amount: 0
-  charge: 0
+  replenishamount: 0
+  charge: 2

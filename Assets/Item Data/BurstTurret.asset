@@ -9,18 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 914ef4d33e5d9e3489311b9352255c85, type: 3}
-  m_Name: AutomaticRifle
+  m_Script: {fileID: 11500000, guid: 30ba76e68e0331a4daa5a99814278b3c, type: 3}
+  m_Name: BurstTurret
   m_EditorClassIdentifier: 
-  officialname: MAR-45
+  officialname: AE-45 Security Turret
   type: 0
-  damage: 15
+  charge: 450
+  turretType: 2
+  damage: 20
   pelletnumber: 1
-  effectiverange: 8
-  actualrange: 20
-  accuracy: 85
-  magazinesize: 30
-  totalammo: 120
-  firerate: 600
-  timeBetweenShot: 0
-  timeBeforeNextBurst: 0
+  range: 8
+  degreeCover: 30
+  firerate: 660
