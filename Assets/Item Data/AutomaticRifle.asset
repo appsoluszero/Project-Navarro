@@ -21,6 +21,6 @@ MonoBehaviour:
   accuracy: 85
   magazinesize: 30
   totalammo: 120
-  firerate: 600
-  timeBetweenShot: 0
+  firerate: 660
   timeBeforeNextBurst: 0
+  numShotPerBurst: 0

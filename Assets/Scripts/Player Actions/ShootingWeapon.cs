@@ -22,10 +22,8 @@ public class ShootingWeapon : MonoBehaviour
     {
         shootingInput.OnShoot += handleShooting;
         shootingInput.OnReloading += reloadWeapon;
-        if(inventory.playerWeapon.type == weaponType.Automatic || inventory.playerWeapon.type == weaponType.NonAutomatic)
-            delayBetweenShot = 1.0f/(inventory.playerWeapon.firerate/60.0f);
-        else
-            delayBetweenShot = inventory.playerWeapon.timeBetweenShot;
+        delayBetweenShot = 1.0f/(inventory.playerWeapon.firerate/60.0f);
+        if(inventory.playerWeapon.type == weaponType.Burst)
             delayNextBurst = inventory.playerWeapon.timeBeforeNextBurst;
     }
     void ShootingStuff(weaponType type, float damage, float effectiverange, float actualrange, float accuracy, int pellet, int cntShot)

@@ -1355,7 +1355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 100
-  playerWeapon: {fileID: 11400000, guid: ce53d571ee32880438ef615b245ac5f9, type: 2}
+  playerWeapon: {fileID: 11400000, guid: dfc004599f85a2d4388e33fb03771340, type: 2}
   leftinmagazine: 0
   totalammo: 0
 --- !u!1 &1584792673
