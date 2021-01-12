@@ -6,11 +6,29 @@ using UnityEngine.Tilemaps;
 public class EnemyPathfinding : MonoBehaviour
 {
     private Rigidbody2D rb;
-    [SerializeField] private GridInitialize gridData;
     [SerializeField] private Transform playerPos;
     [SerializeField] private Grid grid;
     [Header("Walkable")]
     [SerializeField] private Tilemap walkableIndicator;
+    [SerializeField] private Tile walkable;
+    public Dictionary<Vector3Int, Node> gridValue;
+    public class Node
+    {
+        public bool walkable;
+        public int gCost;
+        public int hCost;
+        public Vector3Int NodeIndex;
+        public Node lastNode;
+        public Node(bool _walkable, Vector3Int idx, int g, int h)
+        {
+            walkable = _walkable;
+            NodeIndex = idx;
+            gCost = g;
+            hCost = h;
+            lastNode = null;
+        }
+        public int fCost { get { return gCost + hCost; } }
+    }
 
     void Start()
     {
@@ -30,20 +48,21 @@ public class EnemyPathfinding : MonoBehaviour
                 Vector3 n2 = grid.CellToWorld(path[i+1].NodeIndex);
                 n2.x += grid.cellSize.x/2f;
                 n2.y += grid.cellSize.y/2f;
-                Debug.DrawLine(n1, n2, Color.green,1f);
+                Debug.DrawLine(n1, n2, Color.green);
             }
         }
     }
 
     List<Node> FindPath(Vector2 StartPos, Vector2 TargetPos)
     {
-        gridData.AssignNewGridData();  
+        gridValue = new Dictionary<Vector3Int, Node>();
         Vector3Int StartIdx = walkableIndicator.WorldToCell(StartPos);
         Vector3Int TargetIdx = walkableIndicator.WorldToCell(TargetPos);
-        Node StartNode = gridData.gridValue[StartIdx.x, StartIdx.y];
-        Node TargetNode = gridData.gridValue[TargetIdx.x, TargetIdx.y];
-        StartNode.gCost = 0;
-        StartNode.hCost = CalculateDistance(StartNode, TargetNode);
+        bool check = walkableIndicator.GetTile(StartIdx) == walkable;
+        gridValue.Add(StartIdx, new Node(check, StartIdx, 0, CalculateDistance(StartIdx, TargetIdx)));
+        gridValue.Add(TargetIdx, new Node(check, TargetIdx, int.MaxValue, int.MaxValue));
+        Node StartNode = gridValue[StartIdx];
+        Node TargetNode = gridValue[TargetIdx];
         List<Node> openSet = new List<Node> {StartNode};
         HashSet<Node> closedSet = new HashSet<Node>();
         while(openSet.Count > 0)
@@ -75,12 +94,12 @@ public class EnemyPathfinding : MonoBehaviour
             {
                 if(!neighbor.walkable || closedSet.Contains(neighbor)) continue;
 
-                int MovementCost = currNode.gCost + CalculateDistance(currNode, neighbor);
+                int MovementCost = currNode.gCost + CalculateDistance(currNode.NodeIndex, neighbor.NodeIndex);
                 if(MovementCost < neighbor.gCost)
                 {
                     neighbor.lastNode = currNode;
                     neighbor.gCost = MovementCost;
-                    neighbor.hCost = CalculateDistance(neighbor, TargetNode);
+                    neighbor.hCost = CalculateDistance(neighbor.NodeIndex, TargetNode.NodeIndex);
                     if(!openSet.Contains(neighbor))
                     {
                         openSet.Add(neighbor);
@@ -91,10 +110,10 @@ public class EnemyPathfinding : MonoBehaviour
         return null;
     }
 
-    private int CalculateDistance(Node n1, Node n2)
+    private int CalculateDistance(Vector3Int n1, Vector3Int n2)
     {
-        int xDis = Mathf.Abs(n1.NodeIndex.x - n2.NodeIndex.x);
-        int yDis = Mathf.Abs(n1.NodeIndex.y - n2.NodeIndex.y);
+        int xDis = Mathf.Abs(n1.x - n2.x);
+        int yDis = Mathf.Abs(n1.y - n2.y);
         int remain = Mathf.Abs(xDis - yDis);
         return 14 * Mathf.Min(xDis, yDis) + 10 * remain;
     }
@@ -106,7 +125,13 @@ public class EnemyPathfinding : MonoBehaviour
         {
             for(int j = -1;j<=1;++j)
             {
-                n.Add(gridData.gridValue[currNode.NodeIndex.x + i,currNode.NodeIndex.y + j]);
+                Vector3Int nowPos = new Vector3Int(currNode.NodeIndex.x + i,currNode.NodeIndex.y + j, 0);
+                if(!gridValue.ContainsKey(nowPos))
+                {
+                    bool check = walkableIndicator.GetTile(nowPos) == walkable;
+                    gridValue.Add(nowPos, new Node(check, nowPos, int.MaxValue, int.MaxValue));
+                }
+                n.Add(gridValue[nowPos]);
             }
         }
         return n;

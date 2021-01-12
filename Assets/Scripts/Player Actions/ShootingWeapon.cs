@@ -43,6 +43,7 @@ public class ShootingWeapon : MonoBehaviour
             }
             Debug.DrawLine(currPos, currPos + pelletVector * e.effectiverange , Color.red, 10f);
             Debug.DrawLine(currPos + pelletVector * e.effectiverange, currPos + pelletVector * e.actualrange, Color.green, 10f);
+            
         }
         inventory.leftinmagazine -= 1;
         inventory.totalammo -= 1;
