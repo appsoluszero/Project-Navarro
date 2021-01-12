@@ -86,18 +86,6 @@ TextureImporter:
   - first:
       213: -6056563224155097975
     second: WallFacto_II_27
-  - first:
-      213: 1826333690635774215
-    second: WallFacto_II_28
-  - first:
-      213: -6843262305037888316
-    second: WallFacto_II_29
-  - first:
-      213: 4464713253416588330
-    second: WallFacto_II_30
-  - first:
-      213: -1554233142057138273
-    second: WallFacto_II_31
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -132,7 +120,7 @@ TextureImporter:
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -160,7 +148,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -172,19 +160,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -303,7 +279,7 @@ TextureImporter:
       name: WallFacto_II_5
       rect:
         serializedVersion: 2
-        x: 192
+        x: 576
         y: 1152
         width: 192
         height: 192
@@ -324,8 +300,8 @@ TextureImporter:
       name: WallFacto_II_6
       rect:
         serializedVersion: 2
-        x: 384
-        y: 1152
+        x: 0
+        y: 960
         width: 192
         height: 192
       alignment: 0
@@ -346,7 +322,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 576
-        y: 1152
+        y: 960
         width: 192
         height: 192
       alignment: 0
@@ -367,7 +343,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 960
+        y: 768
         width: 192
         height: 192
       alignment: 0
@@ -388,7 +364,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 960
+        y: 768
         width: 192
         height: 192
       alignment: 0
@@ -409,7 +385,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 960
+        y: 768
         width: 192
         height: 192
       alignment: 0
@@ -430,7 +406,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 576
-        y: 960
+        y: 768
         width: 192
         height: 192
       alignment: 0
@@ -451,7 +427,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 768
+        y: 576
         width: 192
         height: 192
       alignment: 0
@@ -472,7 +448,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 768
+        y: 576
         width: 192
         height: 192
       alignment: 0
@@ -493,7 +469,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 768
+        y: 576
         width: 192
         height: 192
       alignment: 0
@@ -514,7 +490,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 576
-        y: 768
+        y: 576
         width: 192
         height: 192
       alignment: 0
@@ -535,7 +511,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 576
+        y: 384
         width: 192
         height: 192
       alignment: 0
@@ -556,7 +532,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 576
+        y: 384
         width: 192
         height: 192
       alignment: 0
@@ -577,7 +553,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 576
+        y: 384
         width: 192
         height: 192
       alignment: 0
@@ -598,7 +574,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 576
-        y: 576
+        y: 384
         width: 192
         height: 192
       alignment: 0
@@ -619,7 +595,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 384
+        y: 192
         width: 192
         height: 192
       alignment: 0
@@ -640,7 +616,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 384
+        y: 192
         width: 192
         height: 192
       alignment: 0
@@ -661,7 +637,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 384
+        y: 192
         width: 192
         height: 192
       alignment: 0
@@ -682,7 +658,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 576
-        y: 384
+        y: 192
         width: 192
         height: 192
       alignment: 0
@@ -703,7 +679,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 192
+        y: 0
         width: 192
         height: 192
       alignment: 0
@@ -724,7 +700,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 192
+        y: 0
         width: 192
         height: 192
       alignment: 0
@@ -745,7 +721,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 192
+        y: 0
         width: 192
         height: 192
       alignment: 0
@@ -766,7 +742,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 576
-        y: 192
+        y: 0
         width: 192
         height: 192
       alignment: 0
@@ -782,94 +758,10 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: WallFacto_II_28
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7096ca7b0d0785910800000000000000
-      internalID: 1826333690635774215
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WallFacto_II_29
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4c45563d039d701a0800000000000000
-      internalID: -6843262305037888316
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WallFacto_II_30
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a24dfd58c09d5fd30800000000000000
-      internalID: 4464713253416588330
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WallFacto_II_31
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 0
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f978b8521314e6ae0800000000000000
-      internalID: -1554233142057138273
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: a5ba8b67a5a30024f937da76a545510c
     internalID: 0
     vertices: []
     indices: 

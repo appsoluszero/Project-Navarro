@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 76f1cf631d7fb9943b5b209e218c27d5
+guid: 9c610b8e55d13f541b3af29b846d59d1
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -14,42 +14,6 @@ TextureImporter:
   - first:
       213: 6048653850417309780
     second: Vertex_Wall_3
-  - first:
-      213: 9114002067144076097
-    second: Vertex_Wall_4
-  - first:
-      213: -8085641972492631815
-    second: Vertex_Wall_5
-  - first:
-      213: 5133232647217698463
-    second: Vertex_Wall_6
-  - first:
-      213: -8031353786290624650
-    second: Vertex_Wall_7
-  - first:
-      213: 3688113616146400179
-    second: Vertex_Wall_8
-  - first:
-      213: 130880743133377882
-    second: Vertex_Wall_9
-  - first:
-      213: 3594508385524625689
-    second: Vertex_Wall_10
-  - first:
-      213: -1400094370921936802
-    second: Vertex_Wall_11
-  - first:
-      213: -3896128575302811220
-    second: Vertex_Wall_12
-  - first:
-      213: 6743444490391538821
-    second: Vertex_Wall_13
-  - first:
-      213: -6161118668495306701
-    second: Vertex_Wall_14
-  - first:
-      213: 8997333463130282051
-    second: Vertex_Wall_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -84,7 +48,7 @@ TextureImporter:
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -112,7 +76,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -124,19 +88,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -150,8 +102,8 @@ TextureImporter:
       name: Vertex_Wall_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 576
+        x: 192
+        y: 384
         width: 192
         height: 192
       alignment: 0
@@ -171,8 +123,8 @@ TextureImporter:
       name: Vertex_Wall_1
       rect:
         serializedVersion: 2
-        x: 192
-        y: 576
+        x: 384
+        y: 384
         width: 192
         height: 192
       alignment: 0
@@ -192,8 +144,8 @@ TextureImporter:
       name: Vertex_Wall_2
       rect:
         serializedVersion: 2
-        x: 384
-        y: 576
+        x: 192
+        y: 192
         width: 192
         height: 192
       alignment: 0
@@ -213,8 +165,8 @@ TextureImporter:
       name: Vertex_Wall_3
       rect:
         serializedVersion: 2
-        x: 576
-        y: 576
+        x: 384
+        y: 192
         width: 192
         height: 192
       alignment: 0
@@ -230,262 +182,10 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Vertex_Wall_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 384
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14b6c4e87907b7e70800000000000000
-      internalID: 9114002067144076097
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Vertex_Wall_5
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 384
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9f0869037770acf80800000000000000
-      internalID: -8085641972492631815
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Vertex_Wall_6
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 384
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f9659d645e7ec3740800000000000000
-      internalID: 5133232647217698463
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Vertex_Wall_7
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 384
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 677a8a68846ea8090800000000000000
-      internalID: -8031353786290624650
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Vertex_Wall_8
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 192
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3b300bd1bcfce2330800000000000000
-      internalID: 3688113616146400179
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Vertex_Wall_9
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 192
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a55776aa75bf0d100800000000000000
-      internalID: 130880743133377882
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Vertex_Wall_10
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 192
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 911bb55055242e130800000000000000
-      internalID: 3594508385524625689
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Vertex_Wall_11
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 192
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e588c21769dd19ce0800000000000000
-      internalID: -1400094370921936802
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Vertex_Wall_12
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ca1c3dd04bb2ee9c0800000000000000
-      internalID: -3896128575302811220
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Vertex_Wall_13
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 58c4a542907859d50800000000000000
-      internalID: 6743444490391538821
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Vertex_Wall_14
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3304f49c63f4f7aa0800000000000000
-      internalID: -6161118668495306701
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Vertex_Wall_15
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 0
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3489d936d13fcdc70800000000000000
-      internalID: 8997333463130282051
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 9f529fdebf4e697449cde548eeb2d030
     internalID: 0
     vertices: []
     indices: 
