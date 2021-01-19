@@ -23,10 +23,22 @@ public class ShootingWeapon : MonoBehaviour
         shootingInput.OnShoot += handleShooting;
         shootingInput.OnReloading += reloadWeapon;
         delayBetweenShot = 1.0f/(inventory.playerWeapon.firerate/60.0f);
-        if(inventory.playerWeapon.type == weaponType.Burst)
-            delayNextBurst = inventory.playerWeapon.timeBeforeNextBurst;
+        if(inventory.playerWeapon.checkType() == weaponType.Burst)
+            delayNextBurst = inventory.playerWeapon.GetTimeBeforeNextBurst();
     }
-    void ShootingStuff(weaponType type, float damage, float effectiverange, float actualrange, float accuracy, int pellet, int cntShot)
+
+    #region SHOOTING
+    void handleShooting(object sender, EventArgs e)
+    {
+        weaponType type = inventory.playerWeapon.checkType();
+        float damage = inventory.playerWeapon.damage;
+        float effectiverange = inventory.playerWeapon.effectiverange;
+        float actualrange = inventory.playerWeapon.actualrange;
+        float accuracy = inventory.playerWeapon.accuracy;
+        int pellet = inventory.playerWeapon.pelletnumber;
+        ShootingSequence(type, damage, effectiverange, actualrange, accuracy, pellet, inventory.playerWeapon.GetNumShotPerBurst());
+    }
+    void ShootingSequence(weaponType type, float damage, float effectiverange, float actualrange, float accuracy, int pellet, int cntShot)
     {
         if(inventory.leftinmagazine > 0)
         {
@@ -36,17 +48,19 @@ public class ShootingWeapon : MonoBehaviour
                 Vector2 currPos = (Vector2)transform.position;
                 Vector2 pelletVector = new Vector3(Mathf.Cos((view.angle+90f+inaccurateAngle)*Mathf.Deg2Rad), Mathf.Sin((view.angle+90f+inaccurateAngle)*Mathf.Deg2Rad), 0f).normalized;
                 RaycastHit2D enemyHit = Physics2D.Raycast(transform.position, pelletVector, actualrange, enemyLayer);
-                RaycastHit2D physicObjectHit = Physics2D.Raycast(transform.position, pelletVector, actualrange, physicObjectLayer);
+                //RaycastHit2D physicObjectHit = Physics2D.Raycast(transform.position, pelletVector, actualrange, physicObjectLayer);
                 if(enemyHit)
                 {
-                    enemyHit.transform.GetComponent<IDamagable>().recieveDamage((enemyHit.point - (Vector2)transform.position).magnitude, actualrange, effectiverange, damage);
+                    if(enemyHit.transform.GetComponent<IDamagable>() != null)
+                        enemyHit.transform.GetComponent<IDamagable>().recieveDamage((enemyHit.point - (Vector2)transform.position).magnitude, actualrange, effectiverange, damage);
+                    Debug.DrawLine(transform.position, enemyHit.point, Color.red, 10f);
                 }
-                if(physicObjectHit)
+                /*if(physicObjectHit)
                 {
                     physicObjectHit.transform.GetComponent<IPhysicsObject>().recieveForce(physicObjectHit.point - (Vector2)transform.position, physicObjectHit.point);
-                }
-                Debug.DrawLine(currPos, currPos + pelletVector * effectiverange , Color.red, 10f);
-                Debug.DrawLine(currPos + pelletVector * effectiverange, currPos + pelletVector * actualrange, Color.green, 10f);
+                }*/
+                /*Debug.DrawLine(currPos, currPos + pelletVector * effectiverange , Color.red, 10f);
+                Debug.DrawLine(currPos + pelletVector * effectiverange, currPos + pelletVector * actualrange, Color.green, 10f);*/
             }
             inventory.leftinmagazine -= 1;
             inventory.totalammo -= 1;
@@ -56,36 +70,19 @@ public class ShootingWeapon : MonoBehaviour
             shootingInput.OnShoot -= handleShooting;
             MuzzleLightHandle();
             if(type == weaponType.Burst)
-            {
-                StartCoroutine(countDownDelayBrust(type, damage, effectiverange, actualrange, accuracy, pellet, cntShot));
-            }
+                StartCoroutine(countDownDelayBurst(type, damage, effectiverange, actualrange, accuracy, pellet, cntShot));
             else
                 StartCoroutine(countDownDelay());
+            
         }
     }
-    void handleShooting(object sender, InputManagerShooting.OnShootArgs e)
+    IEnumerator countDownDelayBurst(weaponType type, float damage, float effectiverange, float actualrange, float accuracy, int pellet, int cntShot)
     {
-        weaponType type = e.type;
-        float damage = e.damage;
-        float effectiverange = e.effectiverange;
-        float actualrange = e.actualrange;
-        float accuracy = e.accuracy;
-        int pellet = e.pellet;
-        ShootingStuff(type, damage, effectiverange, actualrange, accuracy, pellet, 1);
-    }
-    IEnumerator countDownDelay()
-    {
-        yield return new WaitForSeconds(delayBetweenShot);
-        shootingInput.OnReloading += reloadWeapon;
-        shootingInput.OnShoot += handleShooting;
-    }
-    IEnumerator countDownDelayBrust(weaponType type, float damage, float effectiverange, float actualrange, float accuracy, int pellet, int cntShot)
-    {
-        if(cntShot < inventory.playerWeapon.numShotPerBurst)
+        if(cntShot > 1)
         {
             yield return new WaitForSeconds(delayBetweenShot);
-            cntShot++;
-            ShootingStuff(type, damage, effectiverange, actualrange, accuracy, pellet, cntShot);
+            cntShot--;
+            ShootingSequence(type, damage, effectiverange, actualrange, accuracy, pellet, cntShot);
         }
         else
         {
@@ -94,14 +91,25 @@ public class ShootingWeapon : MonoBehaviour
             shootingInput.OnShoot += handleShooting;
         }
     }
-    void reloadWeapon(object sender, InputManagerShooting.OnReloadingArgs e)
+    IEnumerator countDownDelay()
     {
-        if(inventory.leftinmagazine < e.magsize && inventory.totalammo > 0)
+        yield return new WaitForSeconds(delayBetweenShot);
+        shootingInput.OnReloading += reloadWeapon;
+        shootingInput.OnShoot += handleShooting;
+    }
+    #endregion
+
+    #region RELOADING
+    void reloadWeapon(object sender, EventArgs e)
+    {
+        if(inventory.leftinmagazine < inventory.playerWeapon.magazinesize && inventory.totalammo > 0)
         {
-            inventory.leftinmagazine = Mathf.Clamp(inventory.totalammo, 0, e.magsize);
+            inventory.leftinmagazine = Mathf.Clamp(inventory.totalammo, 0, inventory.playerWeapon.magazinesize);
             Debug.Log("Reloaded!");
         }
     }
+    #endregion
+
     void MuzzleLightHandle()
     {
         muzzleLight.SetActive(true);

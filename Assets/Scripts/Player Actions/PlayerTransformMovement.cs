@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-public class TransformMovement : MonoBehaviour, IMovementMethod
+public class PlayerTransformMovement : MonoBehaviour, IMovementMethod
 {
     //Moving a character without regards to physics
     [Header("Player Properties")]

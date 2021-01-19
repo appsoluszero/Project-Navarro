@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public int playerHealth = 100;
-    public Weapon playerWeapon;
+    public WeaponBase playerWeapon;
     public int leftinmagazine;
     public int totalammo;
+    //public GadgetBase playerGadget;
+    public ReplenishmentBase playerReplenishment;
+    [SerializeField] private int ReplenishmentCharge;
     void Start()
     {
         leftinmagazine = playerWeapon.magazinesize;

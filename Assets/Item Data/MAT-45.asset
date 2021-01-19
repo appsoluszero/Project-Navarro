@@ -9,18 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 914ef4d33e5d9e3489311b9352255c85, type: 3}
-  m_Name: BurstSMG
+  m_Script: {fileID: 11500000, guid: 3edaf184de0531e4aa255ae238f23f58, type: 3}
+  m_Name: MAT-45
   m_EditorClassIdentifier: 
-  officialname: Nice Burst SMG
-  type: 2
-  damage: 15
+  officialname: Mining Assisted Tool .45
+  damage: 20
   pelletnumber: 1
   effectiverange: 8
-  actualrange: 20
-  accuracy: 85
+  actualrange: 15
+  accuracy: 60
   magazinesize: 30
-  totalammo: 120
-  firerate: 1200
-  timeBeforeNextBurst: 0.5
-  numShotPerBurst: 3
+  totalammo: 90
+  firerate: 660

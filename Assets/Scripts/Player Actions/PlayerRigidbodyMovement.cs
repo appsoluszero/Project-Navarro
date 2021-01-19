@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-public class RigidbodyMovement : MonoBehaviour, IMovementMethod
+public class PlayerRigidbodyMovement : MonoBehaviour, IMovementMethod
 {
     //Moving a character with regards to physics
     [Header("Player Properties")]

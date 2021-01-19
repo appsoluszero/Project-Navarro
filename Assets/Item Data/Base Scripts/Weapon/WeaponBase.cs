@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "Weapon", menuName = "Item/Weapon")]
-public class Weapon : ScriptableObject
+public class WeaponBase : ScriptableObject
 {
     public string officialname;
-    public weaponType type;
     //pure damage
     public float damage;
     //most guns stay at 1, except for shotgun with multiples
@@ -22,14 +20,18 @@ public class Weapon : ScriptableObject
     public int totalammo;
     //shot per minute
     public float firerate;
-    [Header("For burst")]
-    public float timeBeforeNextBurst;
-    public int numShotPerBurst;
+    public virtual int GetNumShotPerBurst() { return -100; }
+    public virtual float GetTimeBeforeNextBurst() { return -100f; }
+    public virtual weaponType checkType()
+    {
+        return weaponType.Generic;
+    }
 
 }
 
 public enum weaponType 
 {
+    Generic,
     Automatic,
     NonAutomatic,
     Burst
