@@ -8,7 +8,7 @@ public class ShootingWeapon : MonoBehaviour
     [SerializeField] private InputManagerShooting shootingInput;
     [SerializeField] private GameObject muzzleLight;
     [SerializeField] private LayerMask enemyLayer;
-    [SerializeField] private LayerMask physicObjectLayer;
+    //[SerializeField] private LayerMask physicObjectLayer;
     private PlayerView view;
     private PlayerInventory inventory;
     private float delayBetweenShot;
@@ -53,14 +53,18 @@ public class ShootingWeapon : MonoBehaviour
                 {
                     if(enemyHit.transform.GetComponent<IDamagable>() != null)
                         enemyHit.transform.GetComponent<IDamagable>().recieveDamage((enemyHit.point - (Vector2)transform.position).magnitude, actualrange, effectiverange, damage);
-                    Debug.DrawLine(transform.position, enemyHit.point, Color.red, 10f);
+                    Debug.DrawLine(currPos, enemyHit.point, Color.red, 10f);
+                }
+                else
+                {
+                    Debug.DrawLine(currPos, currPos + pelletVector * actualrange, Color.red, 10f);
                 }
                 /*if(physicObjectHit)
                 {
                     physicObjectHit.transform.GetComponent<IPhysicsObject>().recieveForce(physicObjectHit.point - (Vector2)transform.position, physicObjectHit.point);
                 }*/
-                /*Debug.DrawLine(currPos, currPos + pelletVector * effectiverange , Color.red, 10f);
-                Debug.DrawLine(currPos + pelletVector * effectiverange, currPos + pelletVector * actualrange, Color.green, 10f);*/
+                //Debug.DrawLine(currPos, currPos + pelletVector * effectiverange , Color.red, 10f);
+                //Debug.DrawLine(currPos + pelletVector * effectiverange, currPos + pelletVector * actualrange, Color.green, 10f);
             }
             inventory.leftinmagazine -= 1;
             inventory.totalammo -= 1;
